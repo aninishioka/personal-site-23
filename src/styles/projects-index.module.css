@@ -1,0 +1,7 @@
+.projectsContainer {
+  display: -ms-grid;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.7rem;
+  justify-items: center;
+}

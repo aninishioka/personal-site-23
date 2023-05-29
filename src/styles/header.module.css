@@ -1,0 +1,57 @@
+.header {
+  position: -webkit-sticky;
+  display: sticky;
+}
+
+.header a {
+  font-weight: 400;
+}
+
+.nav {
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.homeLink {
+  font-size: 1.7rem;
+  text-transform: uppercase;
+}
+
+.rightLinks li {
+  display: inline-block;
+  margin-right: 2em;
+}
+
+.rightLinks li:last-child {
+  margin-right: 0;
+}
+
+.pageLink {
+  font-size: 1.35rem;
+}
+
+.themeToggle {
+  background: none;
+  cursor: pointer;
+}
+
+.themeToggle img {
+  height: 1.35rem;
+  width: auto;
+}
+
+@media (max-width: 480px) {
+  .nav {
+    flex-direction: column;
+  }
+
+  .rightLinks {
+    font-size: 1.2rem;
+  }
+
+  .themeToggle img {
+    height: 1.2rem;
+  }
+}

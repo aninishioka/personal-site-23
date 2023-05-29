@@ -1,0 +1,34 @@
+{
+  "projectData": [
+    {
+      "id": "chat-app",
+      "title": "Chat App",
+      "description": "A messaging app for the web. Features include user authentication, real time one-on-one chatting, and an in-app profile picture editor.",
+      "assets": [
+        {
+          "src": "chat.gif",
+          "alt": "real time chatting"
+        },
+        {
+          "src": "onboarding.gif",
+          "alt": "in-app photo editor"
+        }
+      ],
+      "tags": [
+        "React",
+        "Express.js",
+        "MongoDB",
+        "Socket.IO",
+        "Node.js",
+        "Firebase"
+      ]
+    },
+    {
+      "id": "text-editor",
+      "title": "Text Editor",
+      "description": "Supports functions such as creating and saving files, word wrapping, and common shortcuts including undo, redo and font resizing. Wrote own implementation of a doubly linked list for constant time character insert.",
+      "assets": [],
+      "tags": ["Java", "JavaFX"]
+    }
+  ]
+}
