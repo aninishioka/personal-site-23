@@ -12,8 +12,10 @@ export default function MainLayout({ children }) {
         <title>Anissa Nishioka</title>
       </Head>
       <div className={`${theme} appContainer`}>
-        <Header></Header>
-        <main>{children}</main>
+        <div className={"restrictWidth"}>
+          <Header></Header>
+          <main>{children}</main>
+        </div>
       </div>
     </>
   );
