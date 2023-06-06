@@ -36,7 +36,7 @@ export default function HomePage() {
             .
           </p>
           <p>
-            <span>Let's chat!</span>{" "}
+            Let's chat!{" "}
             <a href="mailto:ani.nishioka@gmail.com">ani.nishioka@gmail.com</a>
           </p>
         </div>
