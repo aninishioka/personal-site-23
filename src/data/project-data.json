@@ -38,9 +38,10 @@
       "id": "kanban-board",
       "title": "Exposures",
       "description": "A kanban board style web app built to aid those who suffer from OCD, anxiety, and related experiences by providing an easy way to organize and engage in therapeutic practices such as Exposure Response Prevention.",
+      "assets": [],
       "tags": ["Typescript", "Next.js", "React", "Node.js"],
       "github": "",
-      "inProgess": true
+      "inProgress": true
     }
   ]
 }

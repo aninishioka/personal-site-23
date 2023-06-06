@@ -15,13 +15,7 @@ export default function ProjectsPage({ projectData }) {
   return (
     <div className={styles.projectsContainer}>
       {projectData.map((project) => (
-        <ProjectCard
-          title={project.title}
-          description={project.description}
-          assets={project.assets}
-          tags={project.tags}
-          key={project.id}
-        ></ProjectCard>
+        <ProjectCard {...project}></ProjectCard>
       ))}
     </div>
   );
