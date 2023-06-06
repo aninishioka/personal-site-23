@@ -11,7 +11,6 @@ const space_mono = Space_Mono({
 
 export default function ProjectCard({ title, description, assets, tags }) {
   const [active, setActive] = useState(false);
-  const [loaded, setLoaded] = useState(false);
 
   function handleClick() {
     setActive((prevState) => {
@@ -20,20 +19,22 @@ export default function ProjectCard({ title, description, assets, tags }) {
   }
 
   function renderAssets() {
-    return assets.map((asset, i) => {
-      return (
-        <Image
-          src={require(`../assets/${asset.src}`)}
-          alt={asset.alt}
-          key={i}
-          width="80%"
-          height="100%"
-          onLoad={() => {
-            setLoaded(true);
-          }}
-        />
-      );
-    });
+    if (assets === undefined || assets.length == 0) return;
+    return (
+      <div className={`${styles.assetContainer}`}>
+        {assets.map((asset, i) => {
+          return (
+            <Image
+              src={require(`../assets/${asset.src}`)}
+              alt={asset.alt}
+              key={i}
+              width="80%"
+              height="100%"
+            />
+          );
+        })}
+      </div>
+    );
   }
 
   function renderTags() {
@@ -54,13 +55,7 @@ export default function ProjectCard({ title, description, assets, tags }) {
       <div className={active ? styles.cardBodyActive : styles.cardBody}>
         <div>Built with {renderTags()}.</div>
         <div>{description}</div>
-        <div
-          className={`${styles.assetContainer} ${
-            loaded ? null : styles.hidden
-          }`}
-        >
-          {renderAssets()}
-        </div>
+        {renderAssets()}
       </div>
     </div>
   );

@@ -10,12 +10,11 @@ export default function MainLayout({ children }) {
       <Head>
         <meta name="viewport" content="width=device-width" />
         <title>Anissa Nishioka</title>
+        <meta property="og:site_name" content="Anissa Nishioka" />
       </Head>
       <div className={`${theme} appContainer`}>
-        <div className={"restrictWidth"}>
-          <Header></Header>
-          <main>{children}</main>
-        </div>
+        <Header></Header>
+        <main>{children}</main>
       </div>
     </>
   );

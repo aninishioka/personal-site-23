@@ -64,13 +64,6 @@ p:last-of-type {
 .appContainer {
   width: 100%;
   min-height: 100vh;
-}
-
-.restrictWidth {
-  min-height: 100vh;
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: -webkit-flex;
@@ -79,7 +72,7 @@ p:last-of-type {
 }
 
 main {
-  max-width: 80%;
+  width: 80%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: -webkit-flex;

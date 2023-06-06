@@ -21,14 +21,26 @@
         "Socket.IO",
         "Node.js",
         "Firebase"
-      ]
+      ],
+      "github": "https://github.com/aninishioka/chat-app",
+      "inProgress": false
     },
     {
       "id": "text-editor",
       "title": "Text Editor",
       "description": "Supports functions such as creating and saving files, word wrapping, and common shortcuts including undo, redo and font resizing. Wrote own implementation of a doubly linked list for constant time character insert.",
       "assets": [],
-      "tags": ["Java", "JavaFX"]
+      "tags": ["Java", "JavaFX"],
+      "github": "https://github.com/aninishioka/text-edit",
+      "inProgress": false
+    },
+    {
+      "id": "kanban-board",
+      "title": "Exposures",
+      "description": "A kanban board style web app built to aid those who suffer from OCD, anxiety, and related experiences by providing an easy way to organize and engage in therapeutic practices such as Exposure Response Prevention.",
+      "tags": ["Typescript", "Next.js", "React", "Node.js"],
+      "github": "",
+      "inProgess": true
     }
   ]
 }
