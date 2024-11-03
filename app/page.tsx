@@ -1,20 +1,15 @@
-import React from "react";
+"use client";
+
+import { useContext } from "react";
 import styles from "../styles/index.module.css";
-import Head from "next/head";
+import ThemeContext from "../contexts/themeContext";
 
 export default function HomePage() {
+  const { theme } = useContext(ThemeContext);
+
   return (
-    <>
-      <Head>
-        <meta property="og:title" content="Anissa Nishioka" />
-        <meta property="og:type" content="profile" />
-        <meta property="og:url" content="https://www.aninishioka.com/" />
-        <meta
-          property="og:description"
-          content="Working in healthcare and interested in frontend development."
-        />
-      </Head>
-      <div className={styles.bodyContainer}>
+    <main className={`${styles.bodyContainer} ${theme}`}>
+      <div>
         <div>
           <p>
             Working in healthcare and interested in frontend development.
@@ -23,6 +18,7 @@ export default function HomePage() {
             <a
               href="https://www.goodreads.com/book/show/117833.The_Master_and_Margarita"
               target="_blank"
+              rel="noreferrer"
             >
               The Master and the Margarita
             </a>{" "}
@@ -30,6 +26,7 @@ export default function HomePage() {
             <a
               href="https://www.harpercollins.com/products/mayumu-abi-balingit"
               target="_blank"
+              rel="noreferrer"
             >
               Mayumu
             </a>
@@ -41,6 +38,6 @@ export default function HomePage() {
           </p>
         </div>
       </div>
-    </>
+    </main>
   );
 }

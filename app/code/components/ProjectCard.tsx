@@ -1,5 +1,7 @@
+"use client";
+
 import React, { useState } from "react";
-import styles from "../styles/project-card.module.css";
+import styles from "../../../styles/project-card.module.css";
 import { Space_Mono } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
@@ -10,6 +12,21 @@ const space_mono = Space_Mono({
   subsets: ["latin"],
 });
 
+export type ProjectAsset = {
+  src: string;
+  alt: string;
+};
+
+export type ProjectData = {
+  id: string;
+  title: string;
+  description: string;
+  assets: ProjectAsset[];
+  tags: string[];
+  inProgress: boolean;
+  github?: string;
+};
+
 export default function ProjectCard({
   title,
   description,
@@ -17,7 +34,7 @@ export default function ProjectCard({
   tags,
   inProgress,
   github,
-}) {
+}: ProjectData) {
   const [active, setActive] = useState(false);
 
   function handleClick() {
@@ -26,37 +43,35 @@ export default function ProjectCard({
     });
   }
 
-  function renderAssets() {
-    if (assets === undefined || assets.length == 0) return;
-    return (
-      <div className={`${styles.assetContainer}`}>
-        {assets.map((asset, i) => {
-          return (
-            <Image
-              src={require(`../assets/${asset.src}`)}
-              alt={asset.alt}
-              key={i}
-              width="80%"
-              height="100%"
-            />
-          );
-        })}
-      </div>
-    );
-  }
+  // function renderAssets() {
+  //   if (assets === undefined || assets.length === 0) return;
+  //   return (
+  //     <div className={`${styles.assetContainer}`}>
+  //       {assets.map((asset, i) => {
+  //         return (
+  //           <Image
+  //             src={require(`../../../public/${asset.src}`)}
+  //             alt={asset.alt}
+  //             key={i}
+  //             width="80%"
+  //             height="100%"
+  //           />
+  //         );
+  //       })}
+  //     </div>
+  //   );
+  // }
 
   function renderTags() {
     return tags.join(", ");
   }
-
-  console.log(inProgress);
 
   return (
     <div className={`${styles.card}`}>
       <button onClick={handleClick}>
         <div
           className={`
-            ${space_mono.className} ${styles.cardTitle} 
+            ${space_mono.className} ${styles.cardTitle}
             ${active ? styles.cardTitleActive : null}`}
         >
           <h1>{title}</h1>
@@ -67,7 +82,7 @@ export default function ProjectCard({
           {inProgress ? "In Progress. Building" : "Built"} with {renderTags()}.
         </div>
         <div>{description}</div>
-        {renderAssets()}
+        {/* {renderAssets()} */}
         {github ? (
           <div>
             See the code on <Link href={github}>Github</Link>.

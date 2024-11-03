@@ -1,11 +1,13 @@
-import React from "react";
-import styles from "../styles/header.module.css";
+"use client";
+
+import React, { useContext } from "react";
+import styles from "../../../styles/header.module.css";
 import { Space_Mono } from "next/font/google";
-import { useTheme, useThemeUpdate } from "../contexts/theme.context";
 import Link from "next/link";
-import darkApple from "../assets/dark-apple.svg";
-import lightApple from "../assets/light-apple.svg";
+import darkApple from "../../../public/dark-apple.svg";
+import lightApple from "../../../public/light-apple.svg";
 import Image from "next/image";
+import ThemeContext from "../../../contexts/themeContext";
 
 const space_mono = Space_Mono({
   weight: "400",
@@ -14,11 +16,12 @@ const space_mono = Space_Mono({
 });
 
 export default function Header() {
-  const theme = useTheme();
-  const toggleTheme = useThemeUpdate();
+  const { theme, toggleTheme } = useContext(ThemeContext);
 
   return (
-    <header className={`${space_mono.className} ${styles.header}`}>
+    <header
+      className={`${space_mono.className} ${styles.header} ${theme}`}
+    >
       <nav className={styles.nav}>
         <div>
           <Link href="/" className={styles.homeLink}>
@@ -27,14 +30,14 @@ export default function Header() {
         </div>
         <ul className={styles.rightLinks}>
           <li>
-            <Link href="/projects" className={styles.pageLink}>
+            <Link href="/code" className={styles.pageLink}>
               Code
             </Link>
           </li>
           <li>
             <button className={styles.themeToggle} onClick={toggleTheme}>
               <Image
-                src={theme == "light" ? lightApple : darkApple}
+                src={theme === "light" ? lightApple : darkApple}
                 alt="apple icon"
               />
             </button>
