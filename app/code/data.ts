@@ -4,9 +4,19 @@ export const projectData: ProjectData[] = [
   {
     id: "the-offerhaus",
     title: "The Offer Haus",
-    description: "DIY property offers and track every step of the process.",
-    assets: [],
-    tags: ["Next.js", "Typescript", "Tailwind", "Prisma", "React-Query"],
+    description:
+      "Create real estate offers, negotiate, and track progress on one platform.",
+    assets: [
+      {
+        src: "toh-home.png",
+        alt: "The Offer Haus home page",
+      },
+      {
+        src: "toh-dashboard.png",
+        alt: "The Offer Haus buyer dashboard",
+      },
+    ],
+    tags: ["Next.js", "Typescript", "Tailwind", "Prisma"],
     inProgress: false,
   },
   {
@@ -18,10 +28,12 @@ export const projectData: ProjectData[] = [
       {
         src: "chat.gif",
         alt: "real time chatting",
+        unoptimized: true,
       },
       {
         src: "onboarding.gif",
         alt: "in-app photo editor",
+        unoptimized: true,
       },
     ],
     tags: [
@@ -29,7 +41,6 @@ export const projectData: ProjectData[] = [
       "Express.js",
       "MongoDB",
       "Socket.IO",
-      "Node.js",
       "Firebase",
     ],
     github: "https://github.com/aninishioka/chat-app",

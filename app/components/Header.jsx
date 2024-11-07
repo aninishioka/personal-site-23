@@ -1,13 +1,13 @@
 "use client";
 
 import React, { useContext } from "react";
-import styles from "../../../styles/header.module.css";
+import styles from "@/styles/header.module.css";
 import { Space_Mono } from "next/font/google";
 import Link from "next/link";
-import darkApple from "../../../public/dark-apple.svg";
-import lightApple from "../../../public/light-apple.svg";
+import darkApple from "@/public/dark-apple.svg";
+import lightApple from "@/public/light-apple.svg";
 import Image from "next/image";
-import ThemeContext from "../../../contexts/themeContext";
+import ThemeContext from "@/contexts/themeContext";
 
 const space_mono = Space_Mono({
   weight: "400",

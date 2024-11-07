@@ -1,9 +1,9 @@
 "use client";
 
 import { useContext } from "react";
-import { projectData } from "./projectData";
-import styles from "../../styles/projects-index.module.css";
-import ThemeContext from "../../contexts/themeContext";
+import { projectData } from "./data";
+import styles from "@/styles/projects-index.module.css";
+import ThemeContext from "@/contexts/themeContext";
 import ProjectCard from "./components/ProjectCard";
 
 export default function ProjectsPage() {
@@ -13,7 +13,7 @@ export default function ProjectsPage() {
     <main className={`${theme}`}>
       <div className={styles.projectsContainer}>
         {projectData.map((project) => (
-          <ProjectCard {...project}></ProjectCard>
+          <ProjectCard key={project.id} {...project}></ProjectCard>
         ))}
       </div>
     </main>

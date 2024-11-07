@@ -1,8 +1,8 @@
-import Header from "./code/components/SiteHeader";
-import "../styles/global.css";
+import Header from "./components/Header";
+import "@/styles/global.css";
 import { Metadata } from "next";
 import { ReactNode } from "react";
-import { ThemeProvider } from "../contexts/themeContext";
+import { ThemeProvider } from "@/contexts/themeContext";
 
 export const metadata: Metadata = {
   title: "Anissa Nishioka",
