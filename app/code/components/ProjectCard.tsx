@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import styles from "../../../styles/project-card.module.css";
+import styles from "@/styles/project-card.module.css";
 import { Space_Mono } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
@@ -15,6 +15,7 @@ const space_mono = Space_Mono({
 export type ProjectAsset = {
   src: string;
   alt: string;
+  unoptimized?: boolean;
 };
 
 export type ProjectData = {
@@ -32,7 +33,6 @@ export default function ProjectCard({
   description,
   assets,
   tags,
-  inProgress,
   github,
 }: ProjectData) {
   const [active, setActive] = useState(false);
@@ -43,27 +43,40 @@ export default function ProjectCard({
     });
   }
 
-  // function renderAssets() {
-  //   if (assets === undefined || assets.length === 0) return;
-  //   return (
-  //     <div className={`${styles.assetContainer}`}>
-  //       {assets.map((asset, i) => {
-  //         return (
-  //           <Image
-  //             src={require(`../../../public/${asset.src}`)}
-  //             alt={asset.alt}
-  //             key={i}
-  //             width="80%"
-  //             height="100%"
-  //           />
-  //         );
-  //       })}
-  //     </div>
-  //   );
-  // }
+  function renderAssets() {
+    if (assets.length === 0) return;
+    return (
+      <div className={styles.assetContainer}>
+        {assets.map((asset, i) => {
+          return (
+              <Image
+                src={require(`../../../public/${asset.src}`)}
+                alt={asset.alt}
+                key={asset.src}
+                width={0}
+                height={0}
+                className={styles.asset}
+                unoptimized={asset.unoptimized}
+              />
+          );
+        })}
+      </div>
+    );
+  }
 
   function renderTags() {
-    return tags.join(", ");
+    if (tags.length === 0) return;
+    return (
+      <div className={`${styles.tagContainer}`}>
+        {tags.map((t, i) => {
+          return (
+            <div className={`${styles.tag}`} key={i}>
+              {t}
+            </div>
+          );
+        })}
+      </div>
+    );
   }
 
   return (
@@ -79,15 +92,15 @@ export default function ProjectCard({
       </button>
       <div className={active ? styles.cardBodyActive : styles.cardBody}>
         <div>
-          {inProgress ? "In Progress. Building" : "Built"} with {renderTags()}.
+          <p>{description}</p>
+          {github ? (
+            <p>
+              See the code on <Link href={github}>Github</Link>.
+            </p>
+          ) : null}
         </div>
-        <div>{description}</div>
-        {/* {renderAssets()} */}
-        {github ? (
-          <div>
-            See the code on <Link href={github}>Github</Link>.
-          </div>
-        ) : null}
+        <div>{renderTags()}</div>
+        {renderAssets()}
       </div>
     </div>
   );
