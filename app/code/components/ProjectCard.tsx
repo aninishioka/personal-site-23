@@ -43,15 +43,15 @@ export default function ProjectCard({
       <div className={styles.assetContainer}>
         {assets.map((asset, i) => {
           return (
-              <Image
-                src={require(`../../../public/${asset.src}`)}
-                alt={asset.alt}
-                key={asset.src}
-                width={0}
-                height={0}
-                className={styles.asset}
-                unoptimized={asset.unoptimized}
-              />
+            <Image
+              src={require(`../../../public/${asset.src}`)}
+              alt={asset.alt}
+              key={asset.src}
+              width={0}
+              height={0}
+              className={styles.asset}
+              unoptimized={asset.unoptimized}
+            />
           );
         })}
       </div>
@@ -93,7 +93,7 @@ export default function ProjectCard({
             </p>
           ) : null}
         </div>
-        <div>{renderTags()}</div>
+        {renderTags()}
         {renderAssets()}
       </div>
     </div>

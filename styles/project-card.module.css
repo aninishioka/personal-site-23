@@ -16,7 +16,7 @@
   background-color: transparent;
 }
 
-.cardBodyActive div {
+.cardBodyActive > div {
   margin-bottom: 1rem;
 }
 
@@ -105,6 +105,7 @@
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
+  flex-wrap: wrap;
   gap: .5rem;
 }
 
@@ -127,5 +128,22 @@
 @media (max-width: 1024px) {
   .card {
     width: 100%;
+  }
+}
+
+@media (max-width: 1024px) {
+  .cardBodyActive {
+    padding: 1rem;
+  }
+
+  .assetContainer {
+    gap: 1rem;
+    padding: 0;
+    margin: 2rem auto;
+  }
+
+  .tag {
+    font-size: 12px;
+    padding: .25rem .5rem;
   }
 }
