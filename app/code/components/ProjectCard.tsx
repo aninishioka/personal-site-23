@@ -2,15 +2,9 @@
 
 import React, { useState } from "react";
 import styles from "@/styles/project-card.module.css";
-import { Space_Mono } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
-
-const space_mono = Space_Mono({
-  weight: "400",
-  style: ["normal", "italic"],
-  subsets: ["latin"],
-});
+import { space_mono } from "app/fonts";
 
 export type ProjectAsset = {
   src: string;

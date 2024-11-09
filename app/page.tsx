@@ -1,17 +1,10 @@
 "use client";
 
 import styles from "@/styles/index.module.css";
-import { Space_Mono } from "next/font/google";
-
-const space_mono = Space_Mono({
-  weight: "400",
-  style: ["normal", "italic"],
-  subsets: ["latin"],
-});
 
 export default function HomePage() {
   return (
-    <main className={``}>
+    <main>
       <div className={`${styles.bodyContainer} `}>
         <div>
           <section>
