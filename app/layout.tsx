@@ -3,6 +3,7 @@ import "@/styles/global.css";
 import { Metadata } from "next";
 import { ReactNode } from "react";
 import { ThemeProvider } from "@/contexts/themeContext";
+import AppContainer from "./components/AppContainer";
 
 export const metadata: Metadata = {
   title: "Anissa Nishioka",
@@ -36,12 +37,12 @@ export default function Layout({ children }: { children: ReactNode }) {
   return (
     <html>
       <body>
-        <div className={`appContainer`}>
-          <ThemeProvider>
+        <ThemeProvider>
+          <AppContainer>
             <Header></Header>
             {children}
-          </ThemeProvider>
-        </div>
+          </AppContainer>
+        </ThemeProvider>
       </body>
     </html>
   );

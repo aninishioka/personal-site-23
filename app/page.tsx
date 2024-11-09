@@ -1,21 +1,40 @@
 "use client";
 
-import { useContext } from "react";
 import styles from "@/styles/index.module.css";
-import ThemeContext from "@/contexts/themeContext";
+import { Space_Mono } from "next/font/google";
+
+const space_mono = Space_Mono({
+  weight: "400",
+  style: ["normal", "italic"],
+  subsets: ["latin"],
+});
 
 export default function HomePage() {
-  const { theme } = useContext(ThemeContext);
-
   return (
-    <main className={`${styles.bodyContainer} ${theme}`}>
-      <div>
+    <main className={``}>
+      <div className={`${styles.bodyContainer} `}>
         <div>
-          <p>Full stack software engineer.</p>
-          {/* <p>
-            Let's chat! {" "}
-            <a href="mailto:ani.nishioka@gmail.com">ani.nishioka@gmail.com</a>
-          </p> */}
+          <section>
+            <p>Full stack software engineer based in Los Angeles.</p>
+            <p>
+              Currently working at an early-stage startup in the real estate
+              sector.
+            </p>
+          </section>
+          {/* <hr /> */}
+          {/* <section>
+            <h2>Contact</h2>
+            <ul className={`${styles.contactList}`}>
+              <li>
+                <a href="mailto:ani.nishioka@gmail.com">
+                  ani.nishioka@gmail.com
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/aninishioka">github</a>
+              </li>
+            </ul>
+          </section> */}
         </div>
       </div>
     </main>
