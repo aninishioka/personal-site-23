@@ -131,7 +131,7 @@
   }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
   .cardBodyActive {
     padding: 1rem;
   }
@@ -139,11 +139,9 @@
   .assetContainer {
     gap: 1rem;
     padding: 0;
-    margin: 2rem auto;
   }
 
   .tag {
-    font-size: 12px;
     padding: .25rem .5rem;
   }
 }

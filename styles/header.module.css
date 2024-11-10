@@ -45,6 +45,7 @@
 @media (max-width: 480px) {
   .nav {
     flex-direction: column;
+    gap: .5rem;
   }
 
   .rightLinks {
