@@ -1,0 +1,53 @@
+.bodyContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1 1 auto;
+  justify-content: center;
+  align-items: center;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.bodyContainer section:last-child {
+  margin-bottom: 0;
+}
+
+.bodyContainer h2 {
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.bodyContainer hr {
+  width: 100%;
+  border: 0;
+  border-bottom: dashed 1px var(--text-color);
+  margin: 1rem 0;
+}
+
+.contactList {
+  list-style: inside;
+  list-style-type: none;
+}
+
+.contactList li {
+  margin-bottom: 0.125rem;
+}
+
+.contactList a {
+  font-weight: 400;
+}
+
+.contactList li:last-child {
+  margin-bottom: 0;
+}
+
+.contactList a:hover {
+  text-decoration: underline;
+}

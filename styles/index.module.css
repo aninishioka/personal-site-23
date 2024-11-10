@@ -16,35 +16,3 @@
 .bodyContainer section:last-child {
   margin-bottom: 0;
 }
-
-.bodyContainer h2 {
-  font-size: 1rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  margin-bottom: 0.5rem;
-}
-
-.bodyContainer hr {
-  width: 100%;
-  border: 0;
-  border-bottom: dashed 1px var(--text-color);
-  margin: 1rem 0;
-}
-
-.contactList {
-  list-style: inside;
-  list-style-type: none;
-}
-
-.contactList a {
-  font-weight: 400;
-  margin-bottom: 0.25rem;
-}
-
-.contactList li:last-child {
-  margin-bottom: 0;
-}
-
-.contactList a:hover {
-  text-decoration: underline;
-}

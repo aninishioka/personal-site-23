@@ -24,6 +24,11 @@ export default function Header() {
         </div>
         <ul className={styles.rightLinks}>
           <li>
+            <Link href="/about" className={styles.pageLink}>
+              About
+            </Link>
+          </li>
+          <li>
             <Link href="/code" className={styles.pageLink}>
               Code
             </Link>
